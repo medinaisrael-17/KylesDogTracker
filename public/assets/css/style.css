@@ -1,0 +1,17 @@
+/* label focus color */
+#dogName:focus {
+    border-bottom: 1px solid #2196f3;
+    box-shadow: 0 1px 0 0 #1980d1;
+}
+
+#yourDogs {
+    overflow-y: scroll !important;
+}
+
+.petName {
+    font-size: 2rem;
+}
+
+.fed {
+    float: right;
+}
