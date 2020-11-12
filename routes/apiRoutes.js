@@ -1,18 +1,15 @@
 const db = require("../models");
 
 module.exports = function (app) {
-    console.log("api routes");
-
-    //get the dogs and when they were last fed
+    // get the dogs and when they were last fed
     app.get("/api/dogs", function (req, res) {
         db.Dog.findAll({}).then(function (data) {
             res.json(data);
         });
     });
 
+    // send a new dog
     app.post("/api/dogs", function (req, res) {
-        console.log(req.body);
-
         db.Dog.create({
             name: req.body.name,
             lastFed: ""
@@ -24,10 +21,8 @@ module.exports = function (app) {
             });
     });
 
+    // update when it was fed
     app.put("/api/dogs", function (req, res) {
-        console.log(req.body)
-        console.log(req.body.id);
-
         db.Dog.update(
             {
                 lastFed: req.body.lastFed
@@ -35,6 +30,17 @@ module.exports = function (app) {
             { where: { id: req.body.id } }
         ).then(function (dogUpdate) {
             res.json(dogUpdate);
+        });
+    });
+
+    // delete a dog
+    app.delete("/api/dogs", function(req, res) {
+        db.Dog.destroy({
+            where: {
+                id: req.body.id
+            }
+        }).then(function() {
+            res.send("deleted the dog :-(");
         });
     });
 }
