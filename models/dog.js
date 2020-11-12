@@ -5,7 +5,7 @@ module.exports = function(sequelize, Datatypes) {
             allowNull: false,
         },
         lastFed: {
-            type: Datatypes.DATE,
+            type: Datatypes.STRING,
             allowNull: false,
         }
     });
