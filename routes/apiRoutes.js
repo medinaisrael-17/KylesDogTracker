@@ -1,6 +1,8 @@
 const db = require("../models");
 
 module.exports = function(app) {
+    console.log("api routes");
+
     //get the dogs and when they were last fed
     app.get("/api/dogs", function(req, res) {
         db.Dog.findAll({}).then(function(data) {
