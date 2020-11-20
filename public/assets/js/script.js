@@ -101,7 +101,7 @@ $("#edit").click(function () {
 
     // loop through the node list and add the desired class names
     for (let i = 0; i < buttonArr.length; i++) {
-        // if it has the class showButton then we can hide it otherwise we can hide it :-) 
+        // if it has the class showButton then we can hide it otherwise we can show it :-) 
         buttonArr[i].className.indexOf("showButton") === -1 ?
             buttonArr[i].className = "deleteButtontd showButton"
             : // for kyle, if you're looking at this - it means "or"
